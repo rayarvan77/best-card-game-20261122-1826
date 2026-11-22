@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Tide — Duel of the Three Suits</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="table" aria-label="Ember Tide card table">
+  <header id="topbar">
+    <div id="title-block">
+      <h1 id="game-title">EMBER TIDE</h1>
+      <p id="game-subtitle">Duel of the Three Suits</p>
+    </div>
+    <div id="scoreboard" aria-label="Score">
+      <div class="life-box" id="you-life-box">
+        <span class="life-label">YOU</span>
+        <span class="life-hearts" id="you-hearts"></span>
+        <span class="life-num" id="you-life">20</span>
+      </div>
+      <div id="round-box">
+        <span id="round-label">ROUND</span>
+        <span id="round-num">1</span>
+      </div>
+      <div class="life-box" id="foe-life-box">
+        <span class="life-label">MARROW THE TIDEKEEPER</span>
+        <span class="life-hearts" id="foe-hearts"></span>
+        <span class="life-num" id="foe-life">20</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="felt">
+    <section id="foe-area" aria-label="Opponent hand">
+      <p class="area-label">MARROW'S HAND <span id="foe-count"></span></p>
+      <div id="foe-hand" class="hand"></div>
+    </section>
+
+    <section id="arena" aria-label="Duel arena">
+      <div id="foe-played" class="played-slot"></div>
+      <div id="versus">
+        <div id="clash-result">—</div>
+        <p id="round-message">Choose a card to play.</p>
+        <button id="next-round" hidden>Next round</button>
+      </div>
+      <div id="you-played" class="played-slot"></div>
+    </section>
+
+    <section id="you-area" aria-label="Your hand">
+      <p class="area-label">YOUR HAND <span id="you-count"></span></p>
+      <div id="you-hand" class="hand"></div>
+      <p id="hint">Click a card or press 1–5 to choose it · Enter to play · R to restart</p>
+    </section>
+  </main>
+
+  <div id="overlay" hidden>
+    <div id="overlay-card">
+      <h2 id="overlay-title"></h2>
+      <p id="overlay-text"></p>
+      <p id="overlay-score"></p>
+      <button id="overlay-button">Play again</button>
+      <p id="overlay-keys">Press Enter or R to play again</p>
+    </div>
+  </div>
+
+  <div id="title-screen">
+    <div id="title-inner">
+      <p id="title-kicker">A DUEL OF THE THREE SUITS</p>
+      <h2 id="title-big">EMBER<br>TIDE</h2>
+      <p id="title-rules">
+        Ember beats Leaf. Leaf beats Tide. Tide beats Ember.<br>
+        Each round, play one card. The stronger card strikes —<br>
+        damage equals the difference. First to sink the other wins.
+      </p>
+      <div id="title-suits">
+        <span class="suit-chip suit-ember">▲ EMBER</span>
+        <span class="suit-chip suit-tide">● TIDE</span>
+        <span class="suit-chip suit-leaf">◆ LEAF</span>
+      </div>
+      <button id="start-button">Begin the duel</button>
+      <p id="title-keys">Mouse or keyboard: 1–5 pick a card · Enter plays it · R restarts</p>
+    </div>
+  </div>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
